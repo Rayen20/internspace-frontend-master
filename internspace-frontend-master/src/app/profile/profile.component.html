@@ -1,0 +1,52 @@
+<br/><br/> <br/>
+<main class="main-content">
+
+
+<div class="d-flex custom-section-2 hover-shadow-6 justify-content-center">
+  <div class="">
+
+    <div *ngIf='auth.currentUserValue' class="media m-3 align-items-center">
+      <div class=" transition-hover  mr-5">
+        <img class='rounded-circle' *ngIf='auth.currentUserValue.pictureUrl != null' src={{auth.currentUserValue.pictureUrl}} width="150"
+          alt="Icon">
+        <img class='rounded-circle' *ngIf='auth.currentUserValue.pictureUrl == null' src="assets/images/default-user-male.png" width="150"
+          alt="Icon">
+        <ul class="nav nav-pills d-flex justify-content-center">
+
+          <li class="nav-item nav-item-left-border nav-item-left-border-remove nav-item-left-border-md-show">
+            <div class="social social-brand social-sm mt-1">
+              <a class="social-facebook m-0 transition-hover" href="#"><i class="fab fa-facebook"></i></a>
+              <a class="social-twitter m-0 transition-hover" href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="media-body">
+        <h3 class="h4 text-secondary mb-0 fw-100"><span class="fw-600">
+            {{ auth.currentUserValue.firstName }}
+            {{ auth.currentUserValue.lastName }}
+          </span>
+        </h3>
+
+        <h5 class="h4 text-primary mb-0 fw-100"><span class="fw-600">@{{ auth.currentUserValue.username }}</span>
+        </h5>
+        <ul class="nav nav-pills">
+
+          <li class="nav-item nav-item-anim-icon d-none d-md-block">
+            <a class="nav-link text-primary pl-0 m-list--link" href="#"><i class="icon-mail-2 fs-15 mr-1"></i>
+              {{auth.currentUserValue.email}} </a>
+          </li>
+        </ul>
+        <p *ngIf='auth.currentUserValue.department && auth.currentUserValue.department.site' class="mb-3">
+          department head at {{auth.currentUserValue.department.site.university.name}}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<br>
+<br>
+    </main>

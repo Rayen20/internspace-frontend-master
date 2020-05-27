@@ -1,0 +1,44 @@
+<section class="custom-section-6 m-gab-2-top m-gab-10-bottom">
+  <div class="container">
+
+    <div *ngIf='userQuiz && userQuiz.quiz'>
+      <div class="row mb-8 align-items-center text-center justify-content-around text-lg-left">
+        <div class="col-sm-12 col-md-12 col-lg-10">
+          <span class="label label--sm label--primary mb-2">{{userQuiz.quiz.category.name}}</span>
+          <h2>
+            Quiz result
+          </h2>
+          <h2>
+            <br>
+
+            <h5 *ngIf='!bIsLoadingUserQuiz && userQuiz'
+              class='header-card-title'>
+              Your new score is: {{userQuiz.score}}%
+              <br>
+            </h5>
+
+            <h1 *ngIf='!bIsLoadingUserQuiz && userQuiz && bIsAchieved' class='header-card-title'
+              style="color:green">
+              You achieved this! with a score of {{userQuiz.score}}%. <span style='color: goldenrod'>Congrats!</span>
+
+            </h1>
+            Required percentage: {{userQuiz.quiz.minCorrectQuestionsPercentage}}%
+
+
+          </h2>
+          <hr class="hr-1 hr-primary">
+
+
+
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-2">
+          <a href="#" (click)='goToQuizSelection()' class="btn btn-sleek-primary transition-hover">Next quiz! <span
+              class="fa fa-angle-right ml-2"></span></a>
+        </div>
+      </div>
+
+      <br> <br> <br> <br> <br> <br> <br> <br> <br><br> <br>
+    </div>
+
+  </div>
+</section>

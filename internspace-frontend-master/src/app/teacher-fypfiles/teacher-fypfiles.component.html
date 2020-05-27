@@ -1,0 +1,40 @@
+<br>
+<br>
+<main class="main-content">
+<div class="cool-item">
+ 
+    
+        <div class="container z-index-10">
+
+      
+      <div class="form-inline justify-content-center">
+        
+          <select form-inline justify-content-center class="cool-item" style="max-width:90%;" (change)="onChange_fyp()" >
+              <option>Preview Files</option>
+              <option *ngFor="let category of fypCache; let index = index;" [value]="category"
+                [selected]="category == selectedfyp">
+                {{category}}</option>
+            </select>
+            <select class="cool-item" (change)="onChange_UY($event.target.value)">
+              <option>Universitary Year</option>
+              <option *ngFor="let uy of cachedUYs; let index = index;" [value]="index"
+                [selected]="uy == selectedUY">
+                {{uy.startDate}} - {{uy.endDate}}</option>
+            </select>
+      
+     
+        
+      
+   
+    <app-tabel [tab]="fypllist" ></app-tabel>
+      </div>
+    <div class="cool-item" id="chart1" style=" height: 500px"></div>
+    <app-fyp-categorie></app-fyp-categorie>
+    <notifier-container></notifier-container>
+ </div>
+
+ </div>
+ </main>
+
+
+
